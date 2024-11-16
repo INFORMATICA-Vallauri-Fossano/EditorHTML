@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,7 +83,7 @@ namespace Es06_EditorHTML
         private string nuovo()
         {
             string s = "";
-            s = IndentHtml("<HTML><HEAD><TITLE></TITLE></HEAD><BODY></BODY></HTML>");
+            s = IndentTag("<HTML><HEAD><TITLE>Nuova Pagina</TITLE></HEAD><BODY></BODY></HTML>");
             return s;
         }
         private void scriviTag(string tag, int len)
@@ -202,33 +203,34 @@ namespace Es06_EditorHTML
 
         private void tsbLink_Click(object sender, EventArgs e)
         {
-            scriviTag(indentTag("<a href=\"\"></a>"), 10);
+            scriviTag(IndentTag("<a href=\"\"></a>"), 11);
         }
 
-        private string indentTag(string tag)
+        private string IndentTag(string tag)
         {
-            int i = 1,indentLevel=2;
+            int i = 1,indentLevel=0;
             string indented = "";
-            bool inTag = false;
+            //bool inTag = false;
             while (i < tag.Length)
             {
                 i--;
-                if (tag[i] == '<'&&!inTag)
+                //indented += "|"+tag[i]+"|";
+                if (tag[i] == '<' && tag[i+1]!='/')
                 {
-                    indenta(indentLevel, false);
+                    //indenta(indentLevel,false);
+                    indentLevel++;
                     copiaFinoA('>');
-                    inTag= true;
                 }else if (tag[i] == '>')
                 {
-                    indenta(indentLevel + 1, true);
+                    indenta(indentLevel,true);
                     copiaFinoA('<');
                     i++;
                 }
                 else
                 {
-                    indenta(indentLevel, true);
+                    indentLevel--;
+                    indenta(indentLevel,true);
                     copiaFinoA('>');
-                    inTag = false;
                 }
             }
             return indented;
@@ -244,7 +246,7 @@ namespace Es06_EditorHTML
             void indenta(int indL, bool acapo)
             {
                 indented += "\r";
-                if (acapo) indented += "\n";
+                if(acapo) indented += "\n";
                 for (int j = 0; j < indL; j++) indented += "\t";
             }
         }
@@ -264,68 +266,10 @@ namespace Es06_EditorHTML
         private void tsbForm_Click(object sender, EventArgs e)
         {
             
-            scriviTag(IndentHtml("<FORM ACTION=\"/SUBMIT\" METHOD=\"POST\"><H3></H3><INPUT TYPE=\"TEXT\" NAME=\"DATA\" PLACEHOLDER=\"NOME\" REQUIRED><BUTTON>INVIA</BUTTON></FORM>\r\n"),44);
+            scriviTag(IndentTag("<FORM ACTION=\"SUBMIT\" METHOD=\"POST\"><H3></H3><INPUT TYPE=\"TEXT\" NAME=\"DATA\" PLACEHOLDER=\"NOME\" REQUIRED><BUTTON>INVIA</BUTTON></FORM>"),44);
         }
 
-   
-        public static string IndentHtml(string html)
-        {
-            //StringBuilder indentedHtml = new StringBuilder();
-            //int indentLevel = 1;
-            //bool inTag = false;
-
-            //foreach (char c in html)
-            //{
-            //    indentedHtml.Append(c);
-            //    if (c == '<')
-            //    {
-            //        inTag= true;
-            //        if (!inTag)
-            //        {
-            //            indentedHtml.Append(Environment.NewLine);
-            //            indentedHtml.Append(new string('t', indentLevel * 4));
-            //        }
-            //        indentedHtml.Append(Environment.NewLine);
-            //        indentedHtml.Append(new string('t', indentLevel * 4));
-            //        indentLevel++;
-            //    }
-            //    else if (c == '>')
-            //    {
-            //        inTag = false;
-            //        indentLevel--;
-            //    }
-
-
-            //    if (c == '>' && !inTag)
-            //    {
-            //        indentedHtml.Append(Environment.NewLine);
-            //        indentedHtml.Append(new string(' ', indentLevel * 4));
-            //    }
-            //}
-
-            //return indentedHtml.ToString();
-            return html;
-        }
-
-
-
-
-    //public static string IndentHtml(string html)
-    //{
-    //    string htmlIndented = "";
-    //    bool inTag;
-    //    for (int i = 0; i < html.Length; i++)
-    //    {
-    //        htmlIndented += html[i];
-    //        if (html[i] == '>')
-    //        {
-
-    //        }
-    //    }
-
-    //    return htmlIndented;
-    //}
-    /*
+  /*
 * Da fare come compito a casa
 * <TABLE> apre un nuovo form che chiede bordi, n righe e n colonne
 * <FORM> che aggiunge FORM, input type button select ecc..
