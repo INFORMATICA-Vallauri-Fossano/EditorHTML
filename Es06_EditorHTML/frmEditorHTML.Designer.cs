@@ -337,7 +337,7 @@
             this.tsbLink.Image = ((System.Drawing.Image)(resources.GetObject("tsbLink.Image")));
             this.tsbLink.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbLink.Name = "tsbLink";
-            this.tsbLink.Size = new System.Drawing.Size(43, 28);
+            this.tsbLink.Size = new System.Drawing.Size(43, 24);
             this.tsbLink.Text = "<A>";
             this.tsbLink.Click += new System.EventHandler(this.tsbLink_Click);
             // 
@@ -347,7 +347,7 @@
             this.tsbImg.Image = ((System.Drawing.Image)(resources.GetObject("tsbImg.Image")));
             this.tsbImg.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbImg.Name = "tsbImg";
-            this.tsbImg.Size = new System.Drawing.Size(60, 28);
+            this.tsbImg.Size = new System.Drawing.Size(60, 24);
             this.tsbImg.Text = "<IMG>";
             this.tsbImg.Click += new System.EventHandler(this.tsbImg_Click);
             // 
@@ -357,7 +357,7 @@
             this.tsbForm.Image = ((System.Drawing.Image)(resources.GetObject("tsbForm.Image")));
             this.tsbForm.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbForm.Name = "tsbForm";
-            this.tsbForm.Size = new System.Drawing.Size(73, 28);
+            this.tsbForm.Size = new System.Drawing.Size(73, 24);
             this.tsbForm.Text = "<FORM>";
             this.tsbForm.Click += new System.EventHandler(this.tsbForm_Click);
             // 
@@ -369,6 +369,7 @@
             this.tsbTable.Name = "tsbTable";
             this.tsbTable.Size = new System.Drawing.Size(74, 24);
             this.tsbTable.Text = "<TABLE>";
+            this.tsbTable.Click += new System.EventHandler(this.tsbTable_Click);
             // 
             // statusStrip1
             // 
@@ -520,7 +521,7 @@
             // 
             this.annullaToolStripMenuItem.Name = "annullaToolStripMenuItem";
             this.annullaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.annullaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.annullaToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.annullaToolStripMenuItem.Text = "&Annulla";
             this.annullaToolStripMenuItem.Click += new System.EventHandler(this.annullaToolStripButton_Click);
             // 
@@ -542,7 +543,7 @@
             this.tagliaToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tagliaToolStripMenuItem.Name = "tagliaToolStripMenuItem";
             this.tagliaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.tagliaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tagliaToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.tagliaToolStripMenuItem.Text = "&Taglia";
             this.tagliaToolStripMenuItem.Click += new System.EventHandler(this.tagliaToolStripButton_Click);
             // 
@@ -552,7 +553,7 @@
             this.copiaToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copiaToolStripMenuItem.Name = "copiaToolStripMenuItem";
             this.copiaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copiaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.copiaToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.copiaToolStripMenuItem.Text = "&Copia";
             this.copiaToolStripMenuItem.Click += new System.EventHandler(this.copiaToolStripButton_Click);
             // 
@@ -562,7 +563,7 @@
             this.incollaToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.incollaToolStripMenuItem.Name = "incollaToolStripMenuItem";
             this.incollaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.incollaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.incollaToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.incollaToolStripMenuItem.Text = "&Incolla";
             this.incollaToolStripMenuItem.Click += new System.EventHandler(this.incollaToolStripButton_Click);
             // 
@@ -645,7 +646,7 @@
             this.tabControlHTML.Controls.Add(this.tabPageWeb);
             this.tabControlHTML.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlHTML.Location = new System.Drawing.Point(0, 55);
-            this.tabControlHTML.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControlHTML.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlHTML.Name = "tabControlHTML";
             this.tabControlHTML.SelectedIndex = 0;
             this.tabControlHTML.Size = new System.Drawing.Size(1067, 473);
@@ -656,9 +657,9 @@
             // 
             this.tabPageHTMML.Controls.Add(this.txtHTML);
             this.tabPageHTMML.Location = new System.Drawing.Point(4, 25);
-            this.tabPageHTMML.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageHTMML.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageHTMML.Name = "tabPageHTMML";
-            this.tabPageHTMML.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageHTMML.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageHTMML.Size = new System.Drawing.Size(1059, 444);
             this.tabPageHTMML.TabIndex = 0;
             this.tabPageHTMML.Text = "HTML";
@@ -668,7 +669,7 @@
             // 
             this.txtHTML.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtHTML.Location = new System.Drawing.Point(4, 4);
-            this.txtHTML.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHTML.Margin = new System.Windows.Forms.Padding(4);
             this.txtHTML.MaxLength = 200;
             this.txtHTML.Multiline = true;
             this.txtHTML.Name = "txtHTML";
@@ -681,9 +682,9 @@
             // 
             this.tabPageWeb.Controls.Add(this.webBrowserHTML);
             this.tabPageWeb.Location = new System.Drawing.Point(4, 25);
-            this.tabPageWeb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageWeb.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageWeb.Name = "tabPageWeb";
-            this.tabPageWeb.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageWeb.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageWeb.Size = new System.Drawing.Size(1059, 444);
             this.tabPageWeb.TabIndex = 1;
             this.tabPageWeb.Text = "WEB";
@@ -693,7 +694,7 @@
             // 
             this.webBrowserHTML.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowserHTML.Location = new System.Drawing.Point(4, 4);
-            this.webBrowserHTML.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.webBrowserHTML.Margin = new System.Windows.Forms.Padding(4);
             this.webBrowserHTML.MinimumSize = new System.Drawing.Size(27, 25);
             this.webBrowserHTML.Name = "webBrowserHTML";
             this.webBrowserHTML.Size = new System.Drawing.Size(1051, 436);
@@ -709,7 +710,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEditorHTML";
             this.Text = "Editor HTML";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEditorHTML_FormClosing);

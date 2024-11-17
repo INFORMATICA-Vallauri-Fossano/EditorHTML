@@ -11,6 +11,7 @@ using System.Web;
 using System.Windows.Forms;
 //
 using clsFile_ns;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Es06_EditorHTML
 {
@@ -203,12 +204,20 @@ namespace Es06_EditorHTML
 
         private void tsbLink_Click(object sender, EventArgs e)
         {
-            scriviTag(IndentTag("<a href=\"\"></a>"), 11);
+            scriviTag("<a href=\"\"></a>", 9);
+        }
+        private int GetCursorPositionInLine()
+        {
+            int cursorPosition = txtHTML.SelectionStart;
+            int lineIndex = txtHTML.GetLineFromCharIndex(cursorPosition);
+            int lineStart = txtHTML.GetFirstCharIndexFromLine(lineIndex);
+            return cursorPosition - lineStart;
         }
 
         private string IndentTag(string tag)
         {
             int i = 1,indentLevel=0;
+            int cursorPosition = GetCursorPositionInLine();
             string indented = "";
             //bool inTag = false;
             while (i < tag.Length)
@@ -228,6 +237,7 @@ namespace Es06_EditorHTML
                 }
                 else
                 {
+
                     indentLevel--;
                     indenta(indentLevel,true);
                     copiaFinoA('>');
@@ -246,7 +256,11 @@ namespace Es06_EditorHTML
             void indenta(int indL, bool acapo)
             {
                 indented += "\r";
-                if(acapo) indented += "\n";
+                if (acapo)
+                {
+                    indented += "\n";
+                    for (int j = 0; j < cursorPosition; j++) indented += "\t";
+                }
                 for (int j = 0; j < indL; j++) indented += "\t";
             }
         }
@@ -269,10 +283,34 @@ namespace Es06_EditorHTML
             scriviTag(IndentTag("<FORM ACTION=\"SUBMIT\" METHOD=\"POST\"><H3></H3><INPUT TYPE=\"TEXT\" NAME=\"DATA\" PLACEHOLDER=\"NOME\" REQUIRED><BUTTON>INVIA</BUTTON></FORM>"),44);
         }
 
-  /*
-* Da fare come compito a casa
-* <TABLE> apre un nuovo form che chiede bordi, n righe e n colonne
-* <FORM> che aggiunge FORM, input type button select ecc..
-*/
-}
+        private void tsbTable_Click(object sender, EventArgs e)
+        {
+            frmTable f=new frmTable();
+            f.ShowDialog();
+            if (!f.Annulla)
+            {
+                scriviTag(IndentTag(creaTable(f.Righe, f.Colonne)),0);
+            }
+        }
+
+        private string creaTable(int righe, int colonne)
+        {
+            StringBuilder html = new StringBuilder();
+            html.Append("<table>");
+
+            for (int i = 0; i < righe; i++)
+            {
+                html.Append("<tr>");
+                for (int j = 0; j < colonne; j++)
+                {
+                    html.Append("<td></td>");
+                }
+                html.Append("</tr>");
+            }
+
+            html.Append("</table>");
+            return html.ToString();
+        }
+
+    }
 }
