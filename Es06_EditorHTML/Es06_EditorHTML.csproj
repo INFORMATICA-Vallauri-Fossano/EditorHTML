@@ -53,6 +53,7 @@
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
     <Compile Include="clsFile.cs" />
+    <Compile Include="clsStampa.cs" />
     <Compile Include="frmEditorHTML.cs">
       <SubType>Form</SubType>
     </Compile>

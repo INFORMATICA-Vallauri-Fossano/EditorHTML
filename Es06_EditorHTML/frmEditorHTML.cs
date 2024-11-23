@@ -11,6 +11,7 @@ using System.Web;
 using System.Windows.Forms;
 //
 using clsFile_ns;
+using clsStampa_ns;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Es06_EditorHTML
@@ -296,7 +297,7 @@ namespace Es06_EditorHTML
         private string creaTable(int righe, int colonne)
         {
             StringBuilder html = new StringBuilder();
-            html.Append("<table>");
+            html.Append("<table style=\"border: 1px black solid\">");
 
             for (int i = 0; i < righe; i++)
             {
@@ -311,6 +312,10 @@ namespace Es06_EditorHTML
             html.Append("</table>");
             return html.ToString();
         }
+        
+        private void stampaToolStripButton_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
