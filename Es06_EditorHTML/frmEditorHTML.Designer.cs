@@ -34,6 +34,8 @@
             this.apriToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.salvaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.stampaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.stampaAnteprima = new System.Windows.Forms.ToolStripButton();
+            this.stampaSetup = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.tagliaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copiaToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -94,8 +96,6 @@
             this.txtHTML = new System.Windows.Forms.TextBox();
             this.tabPageWeb = new System.Windows.Forms.TabPage();
             this.webBrowserHTML = new System.Windows.Forms.WebBrowser();
-            this.stampaAnteprima = new System.Windows.Forms.ToolStripButton();
-            this.stampaSetup = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -175,6 +175,26 @@
             this.stampaToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.stampaToolStripButton.Text = "&Stampa";
             this.stampaToolStripButton.Click += new System.EventHandler(this.stampaToolStripButton_Click);
+            // 
+            // stampaAnteprima
+            // 
+            this.stampaAnteprima.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.stampaAnteprima.Image = ((System.Drawing.Image)(resources.GetObject("stampaAnteprima.Image")));
+            this.stampaAnteprima.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.stampaAnteprima.Name = "stampaAnteprima";
+            this.stampaAnteprima.Size = new System.Drawing.Size(24, 24);
+            this.stampaAnteprima.Text = "toolStripButton1";
+            this.stampaAnteprima.Click += new System.EventHandler(this.stampaAnteprima_Click);
+            // 
+            // stampaSetup
+            // 
+            this.stampaSetup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.stampaSetup.Image = ((System.Drawing.Image)(resources.GetObject("stampaSetup.Image")));
+            this.stampaSetup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.stampaSetup.Name = "stampaSetup";
+            this.stampaSetup.Size = new System.Drawing.Size(24, 24);
+            this.stampaSetup.Text = "toolStripButton1";
+            this.stampaSetup.Click += new System.EventHandler(this.stampaSetup_Click);
             // 
             // toolStripSeparator
             // 
@@ -662,7 +682,7 @@
             this.tabPageHTMML.Controls.Add(this.txtHTML);
             this.tabPageHTMML.Location = new System.Drawing.Point(4, 22);
             this.tabPageHTMML.Name = "tabPageHTMML";
-            this.tabPageHTMML.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageHTMML.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageHTMML.Size = new System.Drawing.Size(792, 351);
             this.tabPageHTMML.TabIndex = 0;
             this.tabPageHTMML.Text = "HTML";
@@ -685,8 +705,8 @@
             this.tabPageWeb.Controls.Add(this.webBrowserHTML);
             this.tabPageWeb.Location = new System.Drawing.Point(4, 22);
             this.tabPageWeb.Name = "tabPageWeb";
-            this.tabPageWeb.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPageWeb.Size = new System.Drawing.Size(792, 358);
+            this.tabPageWeb.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWeb.Size = new System.Drawing.Size(792, 351);
             this.tabPageWeb.TabIndex = 1;
             this.tabPageWeb.Text = "WEB";
             this.tabPageWeb.UseVisualStyleBackColor = true;
@@ -697,26 +717,8 @@
             this.webBrowserHTML.Location = new System.Drawing.Point(3, 3);
             this.webBrowserHTML.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserHTML.Name = "webBrowserHTML";
-            this.webBrowserHTML.Size = new System.Drawing.Size(786, 352);
+            this.webBrowserHTML.Size = new System.Drawing.Size(786, 345);
             this.webBrowserHTML.TabIndex = 0;
-            // 
-            // stampaAnteprima
-            // 
-            this.stampaAnteprima.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.stampaAnteprima.Image = ((System.Drawing.Image)(resources.GetObject("stampaAnteprima.Image")));
-            this.stampaAnteprima.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.stampaAnteprima.Name = "stampaAnteprima";
-            this.stampaAnteprima.Size = new System.Drawing.Size(24, 24);
-            this.stampaAnteprima.Text = "toolStripButton1";
-            // 
-            // stampaSetup
-            // 
-            this.stampaSetup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.stampaSetup.Image = ((System.Drawing.Image)(resources.GetObject("stampaSetup.Image")));
-            this.stampaSetup.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.stampaSetup.Name = "stampaSetup";
-            this.stampaSetup.Size = new System.Drawing.Size(24, 24);
-            this.stampaSetup.Text = "toolStripButton1";
             // 
             // frmEditorHTML
             // 

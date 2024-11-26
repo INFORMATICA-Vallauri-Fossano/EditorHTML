@@ -312,10 +312,20 @@ namespace Es06_EditorHTML
             html.Append("</table>");
             return html.ToString();
         }
-        
+        clsStampa printManager=new clsStampa();
         private void stampaToolStripButton_Click(object sender, EventArgs e)
         {
+            printManager.Stampa(txtHTML.Text, txtHTML.Font);
+        }
 
+        private void stampaAnteprima_Click(object sender, EventArgs e)
+        {
+            printManager.Anteprima(txtHTML.Text, txtHTML.Font);
+        }
+
+        private void stampaSetup_Click(object sender, EventArgs e)
+        {
+            printManager.ImpostaPagina();
         }
     }
 }

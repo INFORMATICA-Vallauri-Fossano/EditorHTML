@@ -50,7 +50,15 @@ namespace clsStampa_ns
 
         private void prn_PrintPage(object sender, PrintPageEventArgs e)
         {
-            throw new NotImplementedException();
+            SolidBrush b = new SolidBrush(Color.Black);
+            int x = prn.DefaultPageSettings.Margins.Left;
+            int y = prn.DefaultPageSettings.Margins.Top;
+            int w = prn.DefaultPageSettings.PaperSize.Width - 2 * x;
+            int h = prn.DefaultPageSettings.PaperSize.Height - 2 * y;
+
+            Rectangle rect = new Rectangle(x, y, w, h);
+            e.Graphics.DrawString(userText,userFont,b,rect);
+
         }
 
         public void ImpostaPagina()
